@@ -99,7 +99,7 @@
             width: 100%;
             /* ضبط خلفية الصورة لتتناسب مع جميع الشاشات */
             background-image: url('BannerArabic.jpeg');
-            background-size: unset; 
+            background-size: contain; 
             background-position: center center;
             background-repeat: no-repeat;
             display: flex;
@@ -148,26 +148,6 @@
 
         /* استجابة الجوال للنصوص في البنر */
         @media (max-width: 768px) {
-            .hero {
-            position: relative;
-            /* استخدام dvh يحل مشكلة ارتفاع الشاشة في الجوال مع شريط العنوان */
-            height: 100vh; 
-            height: 100dvh; 
-            width: 100%;
-            /* ضبط خلفية الصورة لتتناسب مع جميع الشاشات */
-            background-image: url('BannerArabic.jpeg');
-            background-size: cover; 
-            background-position: center center;
-            background-repeat: no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            transition: background-image 0.5s ease-in-out;
-            padding: 0;
-            overflow: hidden;
-        }
             .hero h1 { font-size: 2rem; }
             .hero p { font-size: 1rem; }
             /* تقليل الهامش السفلي للزر في الجوال قليلاً */
