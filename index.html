@@ -22,7 +22,6 @@
             --font-en: 'Poppins', sans-serif;
         }
 
-        /* متغيرات الوضع الليلي */
         body.dark-mode {
             --primary-color: #e85d9e;
             --dark-color: #ffffff;
@@ -38,9 +37,9 @@
             color: var(--text-color);
             background-color: var(--light-bg);
             transition: background-color 0.3s, color 0.3s;
+            padding-top: 76px; /* تعويض ارتفاع النافبار الثابت */
         }
 
-        /* تنسيق عام للغة الإنجليزية */
         html[lang="en"] body {
             font-family: var(--font-en);
         }
@@ -49,30 +48,26 @@
         .navbar {
             background-color: var(--nav-bg);
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-            padding: 15px 0;
+            padding: 10px 0;
             transition: all 0.3s ease;
+            height: 76px; /* ارتفاع ثابت */
         }
         .navbar-brand {
             font-weight: 900;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: var(--primary-color) !important;
         }
         .nav-link {
             font-weight: 600;
             color: var(--text-color) !important;
             margin: 0 10px;
-            transition: color 0.3s;
         }
-        .nav-link:hover {
-            color: var(--primary-color) !important;
-        }
+        .nav-link:hover { color: var(--primary-color) !important; }
         
-        /* Buttons in Navbar */
         .nav-btn-group .btn {
             border-radius: 20px;
             padding: 5px 15px;
             font-weight: bold;
-            transition: 0.3s;
             margin: 0 5px;
         }
         .btn-lang {
@@ -90,77 +85,65 @@
             border: 1px solid var(--text-color);
         }
 
-        /* --- تعديلات البنر (Hero Section) --- */
-        .hero {
+        /* --- Hero Section (التعديل الجذري) --- */
+        .hero-container {
             position: relative;
-            /* استخدام dvh يحل مشكلة ارتفاع الشاشة في الجوال مع شريط العنوان */
-            height: 100vh; 
-            height: 100dvh; 
             width: 100%;
-            /* ضبط خلفية الصورة لتتناسب مع جميع الشاشات */
-            background-image: url('BannerArabic.jpeg');
-            background-size: contain; 
-            background-position: center center;
-            background-repeat: no-repeat;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            transition: background-image 0.5s ease-in-out;
             padding: 0;
+            margin: 0;
             overflow: hidden;
+            background-color: var(--dark-color); /* لون احتياطي */
         }
 
-        /* حاوية مرنة داخل البنر لتوزيع العناصر */
-        .hero .container {
+        /* الصورة تأخذ العرض كامل والارتفاع تلقائي لمنع القص */
+        .hero-img {
+            width: 100%;
+            height: auto;
+            display: block; /* إزالة المسافات السفلية الافتراضية للصور */
+            object-fit: contain; /* يضمن ظهور الصورة كاملة */
+        }
+
+        /* حاوية الزر تطفو فوق الصورة */
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
             height: 100%;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
+            align-items: flex-end; /* الزر في الأسفل */
+            justify-content: center; /* الزر في الوسط */
+            padding-bottom: 5%; /* مسافة من الأسفل نسبة للصورة */
+            z-index: 10;
         }
 
-        /* تجميع النصوص في المنتصف */
-        .hero-text-content {
-            margin-top: auto;
-            margin-bottom: auto;
-            max-width: 800px;
+        .btn-hero {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: var(--primary-color);
+            border: 2px solid white;
+            font-weight: 800;
+            padding: 10px 35px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            backdrop-filter: blur(5px);
+        }
+        
+        .btn-hero:hover {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
         }
 
-        /* إنزال الزر للأسفل */
-        .hero-btn-container {
-            margin-bottom: 80px; /* هامش من الأسفل */
-            z-index: 2;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
-        }
-        .hero p {
-            font-size: 1.2rem;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
-        }
-
-        /* استجابة الجوال للنصوص في البنر */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .hero p { font-size: 1rem; }
-            /* تقليل الهامش السفلي للزر في الجوال قليلاً */
-            .hero-btn-container { margin-bottom: 60px; }
-        }
-
-        /* Sections */
-        .section-padding { padding: 80px 0; }
+        /* Sections & Cards */
+        .section-padding { padding: 60px 0; }
         .bg-light-custom { background-color: var(--light-bg); }
         
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
         .section-title h2 {
             color: var(--text-color);
@@ -172,66 +155,43 @@
         .section-title h2::after {
             content: '';
             position: absolute;
-            width: 60px;
-            height: 4px;
+            width: 50px;
+            height: 3px;
             background: var(--primary-color);
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
         }
 
-        /* Cards & Boxes */
         .product-card, .feature-box, .stat-box {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            margin-bottom: 20px;
+            height: 100%;
+        }
+        .feature-box { padding: 30px 20px; }
+        .product-card h5 { color: var(--text-color); margin-top: 10px; }
+        .product-img { height: 220px; object-fit: cover; width: 100%; }
+
+        /* Contact Box */
+        .contact-wrapper {
             background: var(--card-bg);
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: 0.3s;
-            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        .product-card h5, .feature-box h4, .stat-box h3 {
-            color: var(--text-color);
-        }
-        .text-muted {
-            color: #888 !important;
-        }
-        
-        .product-img {
-            height: 250px;
-            object-fit: cover;
-            width: 100%;
-        }
-
-        /* Contact Section */
-        .contact-box-inner {
-            background-color: var(--card-bg);
-            color: var(--text-color);
-            padding: 40px;
-            border-radius: 15px 0 0 15px; 
-        }
-        .contact-box-social {
+        .contact-info { padding: 40px; }
+        .contact-social {
             background-color: #222;
             color: white;
             padding: 40px;
-            border-radius: 0 15px 15px 0;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-        }
-        
-        html[dir="ltr"] .contact-box-inner { border-radius: 15px 0 0 15px; }
-        html[dir="ltr"] .contact-box-social { border-radius: 0 15px 15px 0; }
-        
-        @media (max-width: 768px) {
-            .contact-box-inner, .contact-box-social { border-radius: 15px; margin-bottom: 20px; }
-        }
-
-        /* Map Section */
-        .map-container {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            border: 5px solid var(--card-bg);
+            align-items: center;
         }
 
         /* Logos */
@@ -239,31 +199,18 @@
             filter: grayscale(100%);
             opacity: 0.7;
             transition: 0.3s;
-            max-height: 80px;
+            max-height: 70px;
             width: auto;
-            margin: 20px;
+            margin: 15px;
             background: white;
             padding: 5px;
             border-radius: 5px;
         }
-        .partner-logo:hover {
-            filter: grayscale(0);
-            opacity: 1;
-            transform: scale(1.1);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
+        .partner-logo:hover { filter: grayscale(0); opacity: 1; transform: scale(1.1); }
+        .feature-icon { font-size: 2rem; color: var(--primary-color); margin-bottom: 15px; }
 
         /* Footer */
-        footer {
-            background-color: #111;
-            color: white;
-            padding: 50px 0 20px;
-        }
+        footer { background-color: #111; color: white; padding: 40px 0 20px; }
     </style>
 </head>
 <body>
@@ -271,13 +218,13 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="شعار كلك حلى.jpg" alt="Logo" width="40" height="40" class="d-inline-block align-text-top me-2 rounded-circle">
+                <img src="شعار كلك حلى.jpg" alt="Logo" width="35" height="35" class="d-inline-block align-text-top me-2 rounded-circle">
                 <span data-i18n="brandName">كلك حلى</span>
             </a>
-            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse p-3 p-lg-0 rounded shadow-lg shadow-lg-none mt-2 mt-lg-0" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="#hero" data-i18n="navHome">الرئيسية</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about" data-i18n="navAbout">من نحن</a></li>
@@ -285,7 +232,7 @@
                     <li class="nav-item"><a class="nav-link" href="#logistics" data-i18n="navLogistics">اللوجستيات</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="navContact">تواصل معنا</a></li>
                 </ul>
-                <div class="nav-btn-group d-flex align-items-center">
+                <div class="nav-btn-group d-flex align-items-center justify-content-center mt-3 mt-lg-0">
                     <button class="btn btn-theme" id="themeToggle"><i class="fas fa-moon"></i></button>
                     <button class="btn btn-lang" id="langToggle">English</button>
                 </div>
@@ -293,13 +240,12 @@
         </div>
     </nav>
 
-    <section id="hero" class="hero">
-        <div class="container" data-aos="zoom-in">
-            <div class="hero-text-content">
-            </div>
-            
-            <div class="hero-btn-container">
-                <a href="#about" class="btn btn-light text-primary fw-bold rounded-pill px-4 py-2" data-i18n="btnMore">اكتشف المزيد</a>
+    <section id="hero" class="hero-container">
+        <img id="mainHeroImage" src="BannerArabic.jpeg" alt="Banner" class="hero-img">
+        
+        <div class="hero-overlay">
+            <div data-aos="fade-up">
+                <a href="#about" class="btn btn-hero" data-i18n="btnMore">اكتشف المزيد</a>
             </div>
         </div>
     </section>
@@ -317,13 +263,13 @@
                 <div class="col-lg-6" data-aos="fade-right">
                     <div class="row g-3 text-center">
                         <div class="col-6">
-                            <div class="p-4 border rounded stat-box">
+                            <div class="p-4 border stat-box">
                                 <h3 class="text-primary fw-bold">+3000</h3>
                                 <p class="mb-0 text-muted" data-i18n="statPos">نقطة بيع</p>
                             </div>
                         </div>
                         <div class="col-6">
-                            <div class="p-4 border rounded stat-box">
+                            <div class="p-4 border stat-box">
                                 <h3 class="text-primary fw-bold">2013</h3>
                                 <p class="mb-0 text-muted" data-i18n="statFounded">سنة التأسيس</p>
                             </div>
@@ -344,57 +290,45 @@
             <div id="productCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="zoom-in">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <div class="row">
+                        <div class="row g-3">
                             <div class="col-md-4">
                                 <div class="product-card">
                                     <img src="منتجات1.jpg" class="product-img" alt="Midi">
-                                    <div class="p-3 text-center">
-                                        <h5>Midi Cakes</h5>
-                                    </div>
+                                    <div class="p-3 text-center"><h5>Midi Cakes</h5></div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="product-card">
                                     <img src="منتجات2.jpg" class="product-img" alt="Franzzi">
-                                    <div class="p-3 text-center">
-                                        <h5>Franzzi Cookies</h5>
-                                    </div>
+                                    <div class="p-3 text-center"><h5>Franzzi Cookies</h5></div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="product-card">
                                     <img src="منتجات3.jpg" class="product-img" alt="Tago">
-                                    <div class="p-3 text-center">
-                                        <h5>Tago Bakery</h5>
-                                    </div>
+                                    <div class="p-3 text-center"><h5>Tago Bakery</h5></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <div class="row">
+                        <div class="row g-3">
                             <div class="col-md-4">
                                 <div class="product-card">
                                     <img src="منتجات4.jpg" class="product-img" alt="Thorntons">
-                                    <div class="p-3 text-center">
-                                        <h5>Thorntons</h5>
-                                    </div>
+                                    <div class="p-3 text-center"><h5>Thorntons</h5></div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="product-card">
                                     <img src="منتجات5.jpg" class="product-img" alt="Asolo">
-                                    <div class="p-3 text-center">
-                                        <h5>Asolo Dolce</h5>
-                                    </div>
+                                    <div class="p-3 text-center"><h5>Asolo Dolce</h5></div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="product-card">
                                     <img src="منتجات6.jpg" class="product-img" alt="Win2">
-                                    <div class="p-3 text-center">
-                                        <h5>Win2</h5>
-                                    </div>
+                                    <div class="p-3 text-center"><h5>Win2</h5></div>
                                 </div>
                             </div>
                         </div>
@@ -447,8 +381,8 @@
                 <h2 data-i18n="mapTitle">تغطية شاملة للمملكة</h2>
                 <p class="text-muted" data-i18n="mapSubtitle">نتواجد في جميع المدن الرئيسية والمناطق</p>
             </div>
-            <div class="map-container" data-aos="zoom-in">
-                <img src="الخريطة.png" class="img-fluid w-100" alt="Distribution Map">
+            <div class="text-center" data-aos="zoom-in">
+                <img src="الخريطة.png" class="img-fluid rounded shadow" alt="Distribution Map" style="max-height: 500px;">
             </div>
         </div>
     </section>
@@ -473,8 +407,8 @@
 
     <section id="contact" class="section-padding bg-light-custom">
         <div class="container">
-            <div class="row shadow-lg rounded-4 overflow-hidden g-0">
-                <div class="col-md-6 contact-box-inner" data-aos="fade-left">
+            <div class="row contact-wrapper g-0">
+                <div class="col-md-6 contact-info" data-aos="fade-left">
                     <h2 class="fw-bold mb-4" style="color: var(--primary-color);" data-i18n="contactTitle">تواصل معنا</h2>
                     <p class="mb-5 text-muted" data-i18n="contactDesc">نحن هنا للإجابة على استفساراتكم وبناء شراكات ناجحة.</p>
                     
@@ -502,7 +436,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 contact-box-social text-center" data-aos="fade-right">
+                <div class="col-md-6 contact-social text-center" data-aos="fade-right">
                     <div>
                         <h3 class="mb-4" data-i18n="followUs">تابعنا على وسائل التواصل</h3>
                         <p class="mb-4" data-i18n="followText">ابق على اطلاع بأحدث منتجاتنا وعروضنا</p>
@@ -542,7 +476,6 @@
     <script>
         AOS.init();
 
-        // Data & Variables
         const translations = {
             ar: {
                 brandName: "كلك حلى",
@@ -551,8 +484,6 @@
                 navProducts: "منتجاتنا",
                 navLogistics: "اللوجستيات",
                 navContact: "تواصل معنا",
-                heroTitle: "مفهوم جديد لتوزيع السلع الاستهلاكية",
-                heroSubtitle: "نسعى لجلب أفضل العلامات التجارية العالمية في مجال الحلويات وتقديمها للمستهلك السعودي باحترافية.",
                 btnMore: "اكتشف المزيد",
                 aboutLabel: "من نحن",
                 aboutTitle: "شريكك الأمثل في السوق السعودي",
@@ -587,8 +518,6 @@
                 navProducts: "Products",
                 navLogistics: "Logistics",
                 navContact: "Contact Us",
-                heroTitle: "A New Concept of FMCG Distribution",
-                heroSubtitle: "Our vision is to source high-quality confectionery brands and introduce them professionally to Saudi consumers.",
                 btnMore: "Discover More",
                 aboutLabel: "About Us",
                 aboutTitle: "Your Right Route to the Saudi Market",
@@ -618,48 +547,59 @@
             }
         };
 
-        // مسارات صور البنر (يرجى التأكد من أسماء الصور لديك)
-        const bannerImages = {
-            ar: "url('BannerArabic.jpeg')", 
-            en: "url('BannerEnglish.jpeg')" 
-        };
-
         const langToggle = document.getElementById('langToggle');
         const themeToggle = document.getElementById('themeToggle');
         const bootstrapCss = document.getElementById('bootstrap-css');
-        const heroSection = document.getElementById('hero');
+        const heroImgElement = document.getElementById('mainHeroImage');
 
-        // Language Toggle Logic
+        // دالة مبسطة جداً وقوية لتحديث الصورة
+        function updateBannerImage() {
+            // نستخدم innerWidth وهو مدعوم في كل المتصفحات
+            const isMobile = window.innerWidth <= 768;
+            const currentLang = document.documentElement.getAttribute('lang');
+
+            // تحديد اسم الصورة بناءً على الشروط
+            let imageName = "";
+            if (currentLang === 'ar') {
+                imageName = isMobile ? 'bma.jpeg' : 'BannerArabic.jpeg';
+            } else {
+                imageName = isMobile ? 'bme.jpeg' : 'BannerEnglish.jpeg';
+            }
+
+            // تحديث مصدر الصورة فقط إذا اختلف (لتحسين الأداء)
+            if (!heroImgElement.src.includes(imageName)) {
+                heroImgElement.src = imageName;
+            }
+            
+            // تصحيح اتجاه الزر في الجوال
+            const heroOverlay = document.querySelector('.hero-overlay');
+            if(isMobile) {
+               heroOverlay.style.paddingBottom = "15%"; 
+            } else {
+               heroOverlay.style.paddingBottom = "5%";
+            }
+        }
+
         langToggle.addEventListener('click', () => {
             const html = document.documentElement;
             const currentLang = html.getAttribute('lang');
             
             if (currentLang === 'ar') {
-                // Switch to English
                 html.setAttribute('lang', 'en');
                 html.setAttribute('dir', 'ltr');
                 bootstrapCss.setAttribute('href', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css'); 
                 langToggle.textContent = "عربي";
-                
-                // Change Banner to English
-                heroSection.style.backgroundImage = `${bannerImages.en}`;
-                
                 updateContent('en');
             } else {
-                // Switch to Arabic
                 html.setAttribute('lang', 'ar');
                 html.setAttribute('dir', 'rtl');
                 bootstrapCss.setAttribute('href', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css'); 
                 langToggle.textContent = "English";
-
-                // Change Banner to Arabic
-                heroSection.style.backgroundImage = `${bannerImages.ar}`;
-
                 updateContent('ar');
             }
+            updateBannerImage(); // تحديث فوري للصورة
         });
 
-        // Dark Mode Toggle Logic
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
             const icon = themeToggle.querySelector('i');
@@ -680,6 +620,14 @@
                 }
             });
         }
+
+        // الاستماع للأحداث (التحميل وتغيير الحجم)
+        window.addEventListener('resize', updateBannerImage);
+        window.addEventListener('load', updateBannerImage); // ضمان التحميل عند البدء
+        
+        // تشغيل أولي
+        updateBannerImage();
+
     </script>
 </body>
 </html>
