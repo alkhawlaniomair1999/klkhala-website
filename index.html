@@ -24,7 +24,7 @@
 
         /* متغيرات الوضع الليلي */
         body.dark-mode {
-            --primary-color: #e85d9e; /* تفتيح اللون الوردي قليلاً للوضع الليلي */
+            --primary-color: #e85d9e;
             --dark-color: #ffffff;
             --light-bg: #121212;
             --text-color: #e0e0e0;
@@ -90,14 +90,17 @@
             border: 1px solid var(--text-color);
         }
 
-        /* Hero Section Responsive Fixes */
+        /* --- تعديلات البنر (Hero Section) --- */
         .hero {
             position: relative;
-            min-height: 100vh; /* يضمن ملء الشاشة */
-            /* صورة افتراضية (العربية) */
+            /* استخدام dvh يحل مشكلة ارتفاع الشاشة في الجوال مع شريط العنوان */
+            height: 100vh; 
+            height: 100dvh; 
+            width: 100%;
+            /* ضبط خلفية الصورة لتتناسب مع جميع الشاشات */
             background-image: url('BannerArabic.jpeg');
-            background-size: cover; /* مهم جداً للجوال لملء الخلفية */
-            background-position: center;
+            background-size: unset; 
+            background-position: center center;
             background-repeat: no-repeat;
             display: flex;
             align-items: center;
@@ -105,7 +108,33 @@
             text-align: center;
             color: white;
             transition: background-image 0.5s ease-in-out;
+            padding: 0;
+            overflow: hidden;
         }
+
+        /* حاوية مرنة داخل البنر لتوزيع العناصر */
+        .hero .container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* تجميع النصوص في المنتصف */
+        .hero-text-content {
+            margin-top: auto;
+            margin-bottom: auto;
+            max-width: 800px;
+        }
+
+        /* إنزال الزر للأسفل */
+        .hero-btn-container {
+            margin-bottom: 80px; /* هامش من الأسفل */
+            z-index: 2;
+        }
+
         .hero h1 {
             font-size: 3.5rem;
             font-weight: 900;
@@ -119,13 +148,35 @@
 
         /* استجابة الجوال للنصوص في البنر */
         @media (max-width: 768px) {
+            .hero {
+            position: relative;
+            /* استخدام dvh يحل مشكلة ارتفاع الشاشة في الجوال مع شريط العنوان */
+            height: 100vh; 
+            height: 100dvh; 
+            width: 100%;
+            /* ضبط خلفية الصورة لتتناسب مع جميع الشاشات */
+            background-image: url('BannerArabic.jpeg');
+            background-size: cover; 
+            background-position: center center;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            transition: background-image 0.5s ease-in-out;
+            padding: 0;
+            overflow: hidden;
+        }
             .hero h1 { font-size: 2rem; }
             .hero p { font-size: 1rem; }
+            /* تقليل الهامش السفلي للزر في الجوال قليلاً */
+            .hero-btn-container { margin-bottom: 60px; }
         }
 
         /* Sections */
         .section-padding { padding: 80px 0; }
-        .bg-light-custom { background-color: var(--light-bg); } /* الآن يعتمد على المتغير */
+        .bg-light-custom { background-color: var(--light-bg); }
         
         .section-title {
             text-align: center;
@@ -149,7 +200,7 @@
             transform: translateX(-50%);
         }
 
-        /* Cards & Boxes (Dark Mode Compatible) */
+        /* Cards & Boxes */
         .product-card, .feature-box, .stat-box {
             background: var(--card-bg);
             border-radius: 15px;
@@ -162,7 +213,7 @@
             color: var(--text-color);
         }
         .text-muted {
-            color: #888 !important; /* تعديل ليكون مرئياً في الوضعين */
+            color: #888 !important;
         }
         
         .product-img {
@@ -176,10 +227,10 @@
             background-color: var(--card-bg);
             color: var(--text-color);
             padding: 40px;
-            border-radius: 15px 0 0 15px; /* RTL rounded corners */
+            border-radius: 15px 0 0 15px; 
         }
         .contact-box-social {
-            background-color: #222; /* Always dark for contrast */
+            background-color: #222;
             color: white;
             padding: 40px;
             border-radius: 0 15px 15px 0;
@@ -188,11 +239,9 @@
             justify-content: center;
         }
         
-        /* RTL/LTR handling for corners */
         html[dir="ltr"] .contact-box-inner { border-radius: 15px 0 0 15px; }
         html[dir="ltr"] .contact-box-social { border-radius: 0 15px 15px 0; }
         
-        /* Mobile adjustment for contact box */
         @media (max-width: 768px) {
             .contact-box-inner, .contact-box-social { border-radius: 15px; margin-bottom: 20px; }
         }
@@ -213,7 +262,7 @@
             max-height: 80px;
             width: auto;
             margin: 20px;
-            background: white; /* خلفية بيضاء للشعارات لتظهر في الوضع الليلي */
+            background: white;
             padding: 5px;
             border-radius: 5px;
         }
@@ -231,7 +280,7 @@
 
         /* Footer */
         footer {
-            background-color: #111; /* دائما داكن */
+            background-color: #111;
             color: white;
             padding: 50px 0 20px;
         }
@@ -266,7 +315,12 @@
 
     <section id="hero" class="hero">
         <div class="container" data-aos="zoom-in">
-            <a href="#about" class="btn btn-light text-primary fw-bold rounded-pill px-4 py-2" data-i18n="btnMore">اكتشف المزيد</a>
+            <div class="hero-text-content">
+            </div>
+            
+            <div class="hero-btn-container">
+                <a href="#about" class="btn btn-light text-primary fw-bold rounded-pill px-4 py-2" data-i18n="btnMore">اكتشف المزيد</a>
+            </div>
         </div>
     </section>
 
@@ -586,8 +640,8 @@
 
         // مسارات صور البنر (يرجى التأكد من أسماء الصور لديك)
         const bannerImages = {
-            ar: "url('BannerArabic.jpeg')", // قم بتغيير اسم الصورة العربية هنا اذا كان مختلفاً
-            en: "url('BannerEnglish.jpeg')" // قم بتغيير اسم الصورة الانجليزية هنا اذا كان مختلفاً
+            ar: "url('BannerArabic.jpeg')", 
+            en: "url('BannerEnglish.jpeg')" 
         };
 
         const langToggle = document.getElementById('langToggle');
@@ -648,5 +702,4 @@
         }
     </script>
 </body>
-
 </html>
