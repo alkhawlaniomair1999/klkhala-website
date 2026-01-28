@@ -21,6 +21,30 @@
             --font-ar: 'Cairo', sans-serif;
             --font-en: 'Poppins', sans-serif;
         }
+        /* تحسين ظهور قائمة الموبايل عند الانسدال */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background-color: var(--nav-bg);
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        margin-top: 10px;
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    /* ضمان ظهور الروابط بلون واضح في وضع الموبايل */
+    .nav-link {
+        padding: 10px 15px;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .nav-link:last-child {
+        border-bottom: none;
+    }
+    .hero-overlay{
+        align-items: center !important;
+    }
+}
 
         body.dark-mode {
             --primary-color: #e85d9e;
@@ -116,7 +140,7 @@
             width: 100%;
             height: 100%;
             display: flex;
-            align-items: center; /* الزر في الأسفل */
+            align-items: flex-end; /* الزر في الأسفل */
             justify-content: center; /* الزر في الوسط */
             padding-bottom: 5%; /* مسافة من الأسفل نسبة للصورة */
             z-index: 10;
@@ -447,8 +471,8 @@
                         <p class="mb-4" data-i18n="followText">ابق على اطلاع بأحدث منتجاتنا وعروضنا</p>
                         <div class="d-flex justify-content-center gap-3">
                             <a href="#" class="btn btn-outline-light rounded-circle p-3"><i class="fab fa-snapchat-ghost fa-lg"></i></a>
-                            <a href="#" class="btn btn-outline-light rounded-circle p-3"><i class="fab fa-instagram fa-lg"></i></a>
-                            <a href="#" class="btn btn-outline-light rounded-circle p-3"><i class="fab fa-twitter fa-lg"></i></a>
+                            <a href="https://www.instagram.com/kalk_hala?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="btn btn-outline-light rounded-circle p-3"><i class="fab fa-instagram fa-lg"></i></a>
+                            <a href="https://x.com/klk_7laa_import" class="btn btn-outline-light rounded-circle p-3"><i class="fab fa-twitter fa-lg"></i></a>
                         </div>
                         <p class="mt-4 fw-bold text-white">Klk_7ala</p>
                     </div>
@@ -636,6 +660,3 @@
     </script>
 </body>
 </html>
-
-
-
