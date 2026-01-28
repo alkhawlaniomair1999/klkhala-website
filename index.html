@@ -364,7 +364,7 @@
                     <div class="feature-box text-center">
                         <i class="fas fa-warehouse feature-icon"></i>
                         <h4 data-i18n="feat1Title">بنية تحتية قوية</h4>
-                        <p class="text-muted" data-i18n="feat1Desc">مستودع مركزي في الرياض و 4 مستودعات إقليمية في ابها و 3 مستودعات إقليمية في جدة والدمام والقصيم.</p>
+                        <p class="text-muted" data-i18n="feat1Desc">مستودع مركزي في الرياض و 4 مستودعات إقليمية في الجنوب و 3 مستودعات إقليمية في الغرب والشرق والشمال.</p>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
@@ -451,11 +451,13 @@
                         <h3 class="mb-4" data-i18n="followUs">تابعنا على وسائل التواصل</h3>
                         <p class="mb-4" data-i18n="followText">ابق على اطلاع بأحدث منتجاتنا وعروضنا</p>
                         <div class="d-flex justify-content-center gap-3">
-                            <a href="#" class="btn btn-outline-light rounded-circle p-3"><i class="fab fa-snapchat-ghost fa-lg"></i></a>
-                            <a href="https://www.instagram.com/kellekhala5?igsh=b3BmNWl0M2l3bTFi" class="btn btn-outline-light rounded-circle p-3"><i class="fab fa-instagram fa-lg"></i></a>
-                            <a href="https://x.com/kellekhala5" class="btn btn-outline-light rounded-circle p-3"><i class="fab fa-twitter fa-lg"></i></a>
+                            <i class="fab fa-snapchat-ghost fa-lg"></i>
+                            <i class="fab fa-instagram fa-lg"></i>
+                            <i class="fab fa-twitter fa-lg"></i>
                         </div>
                         <p class="mt-4 fw-bold text-white">Klk_7ala</p>
+                           <p style="padding-top: 20px" data-i18n="contactUs">تواصل معنا عبر Linkedin</p>
+                        <a href="#" class="btn btn-outline-light rounded-circle p-3"><i class="fab fa-linkedin fa-lg"></i></a>
                     </div>
                 </div>
             </div>
@@ -504,7 +506,7 @@
                 productsSubtitle: "تشكيلة واسعة من الكيك، البسكويت، والويفر",
                 featuresTitle: "لماذا كلك حلى؟",
                 feat1Title: "بنية تحتية قوية",
-                feat1Desc: "مستودع مركزي في الرياض و 3 مستودعات إقليمية في جدة والدمام والقصيم.",
+                feat1Desc: "مستودع مركزي في الرياض و 4 مستودعات إقليمية في الجنوب و 3 مستودعات إقليمية في الغرب والشرق والشمال.",
                 feat2Title: "تسويق مبتكر",
                 feat2Desc: "نستخدم المؤثرين (سناب شات، انستقرام) والمعارض وأنشطة التذوق للوصول للجمهور.",
                 feat3Title: "أسطول مبرد",
@@ -519,7 +521,8 @@
                 email: "البريد الإلكتروني",
                 address: "الدائري الثاني الجنوبي، مخرج 18، حي المشاعل، الرياض.",
                 followUs: "تابعنا",
-                followText: "ابق على اطلاع بأحدث منتجاتنا وعروضنا"
+                followText: "ابق على اطلاع بأحدث منتجاتنا وعروضنا",
+                contactUs:"تواصل معنا عبر Linkedin"
             },
             en: {
                 brandName: "Kellek Hala",
@@ -538,7 +541,7 @@
                 productsSubtitle: "A wide range of cakes, biscuits, and wafers",
                 featuresTitle: "Why Kellek Hala?",
                 feat1Title: "Strong Infrastructure",
-                feat1Desc: "Central warehouse in Riyadh & 3 regional warehouses in Jeddah, Dammam, and Qassim.",
+                feat1Desc: "Central warehouse in Riyadh and 4 regional warehouses in the South and 3 regional warehouses in the West, East, and North.",
                 feat2Title: "Innovative Marketing",
                 feat2Desc: "We use influencers (Snapchat, Instagram), exhibitions, and sampling to reach consumers.",
                 feat3Title: "Chilled Fleet",
@@ -553,7 +556,8 @@
                 email: "Email",
                 address: "2nd Southern Ring Road, Exit 18, Al Mashael Dist, Riyadh.",
                 followUs: "Follow Us",
-                followText: "Stay updated with our latest products and offers"
+                followText: "Stay updated with our latest products and offers",
+                contactUs:"Contact us via Linkedin"
             }
         };
 
@@ -571,9 +575,9 @@
             // تحديد اسم الصورة بناءً على الشروط
             let imageName = "";
             if (currentLang === 'ar') {
-                imageName = isMobile ? 'bma.jpeg' : 'BannerArabic.jpeg';
+                imageName = isMobile ? 'bna.jpeg' : 'BannerArabic.jpeg';
             } else {
-                imageName = isMobile ? 'bme.jpeg' : 'BannerEnglish.jpeg';
+                imageName = isMobile ? 'bne.jpeg' : 'BannerEnglish.jpeg';
             }
 
             // تحديث مصدر الصورة فقط إذا اختلف (لتحسين الأداء)
