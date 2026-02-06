@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كلك حلى | Kellek Hala</title>
+    
+    <title>كلك حلى | حلويات فاخرة ومستوردة - عالم من السعادة في كل قطعة</title>
+    <meta name="description" content="متجر كلك حلى متخصص في استيراد وتوزيع أرقى العلامات التجارية العالمية للحلويات، الكيك، والبسكويت في السوق السعودي منذ عام 2013.">
+    <meta name="keywords" content="كلك حلى, حلويات مستوردة السعودية, كيك ميدي, بسكويت فرانزي, توزيع مواد غذائية الرياض">
+    <link rel="canonical" href="https://alkhawlaniomair1999.github.io/">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" id="bootstrap-css">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -21,30 +25,35 @@
             --font-ar: 'Cairo', sans-serif;
             --font-en: 'Poppins', sans-serif;
         }
-        /* تحسين ظهور قائمة الموبايل عند الانسدال */
-@media (max-width: 991px) {
-    .navbar-collapse {
-        background-color: var(--nav-bg);
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        margin-top: 10px;
-        border: 1px solid rgba(0,0,0,0.05);
-    }
-    
-    /* ضمان ظهور الروابط بلون واضح في وضع الموبايل */
-    .nav-link {
-        padding: 10px 15px;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
-    }
-    
-    .nav-link:last-child {
-        border-bottom: none;
-    }
-    .hero-overlay{
-        align-items: center !important;
-    }
-}
+
+        /* تحسين السيو: إخفاء الـ H1 بصرياً فقط ليبقى متاحاً لمحركات البحث */
+        .seo-h1 {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        @media (max-width: 991px) {
+            .navbar-collapse {
+                background-color: var(--nav-bg);
+                padding: 15px;
+                border-radius: 10px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+                margin-top: 10px;
+                border: 1px solid rgba(0,0,0,0.05);
+            }
+            .nav-link {
+                padding: 10px 15px;
+                border-bottom: 1px solid rgba(0,0,0,0.05);
+            }
+            .nav-link:last-child { border-bottom: none; }
+            .hero-overlay { align-items: center !important; }
+        }
 
         body.dark-mode {
             --primary-color: #e85d9e;
@@ -54,11 +63,8 @@
             --card-bg: #1e1e1e;
             --nav-bg: #1e1e1e;
         }
-        html{
-            max-width: 100%;
-            overflow-x: hidden;
-        }
 
+        html { max-width: 100%; overflow-x: hidden; }
         body {
             font-family: var(--font-ar);
             max-width: 100%;
@@ -66,233 +72,90 @@
             color: var(--text-color);
             background-color: var(--light-bg);
             transition: background-color 0.3s, color 0.3s;
-            padding-top: 76px; /* تعويض ارتفاع النافبار الثابت */
+            padding-top: 76px;
         }
+        html[lang="en"] body { font-family: var(--font-en); }
 
-        html[lang="en"] body {
-            font-family: var(--font-en);
-        }
-
-        /* Navbar */
         .navbar {
             background-color: var(--nav-bg);
             box-shadow: 0 2px 15px rgba(0,0,0,0.1);
             padding: 10px 0;
             transition: all 0.3s ease;
-            height: 76px; /* ارتفاع ثابت */
+            height: 76px;
         }
-        .navbar-brand {
-            font-weight: 900;
-            font-size: 1.5rem;
-            color: var(--primary-color) !important;
-        }
-        .nav-link {
-            font-weight: 600;
-            color: var(--text-color) !important;
-            margin: 0 10px;
-        }
+        .navbar-brand { font-weight: 900; font-size: 1.5rem; color: var(--primary-color) !important; }
+        .nav-link { font-weight: 600; color: var(--text-color) !important; margin: 0 10px; }
         .nav-link:hover { color: var(--primary-color) !important; }
         
-        .nav-btn-group .btn {
-            border-radius: 20px;
-            padding: 5px 15px;
-            font-weight: bold;
-            margin: 0 5px;
-        }
-        .btn-lang {
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            background: transparent;
-        }
-        .btn-lang:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-        .btn-theme {
-            background: var(--light-bg);
-            color: var(--text-color);
-            border: 1px solid var(--text-color);
-        }
-
-        /* --- Hero Section (التعديل الجذري) --- */
         .hero-container {
             position: relative;
             width: 100%;
             padding: 0;
             margin: 0;
             overflow: hidden;
-            background-color: var(--dark-color); /* لون احتياطي */
+            background-color: var(--dark-color);
         }
-
-        /* الصورة تأخذ العرض كامل والارتفاع تلقائي لمنع القص */
-        .hero-img {
-            width: 100%;
-            height: auto;
-            display: block; /* إزالة المسافات السفلية الافتراضية للصور */
-            object-fit: contain; /* يضمن ظهور الصورة كاملة */
-        }
-
-        /* حاوية الزر تطفو فوق الصورة */
+        .hero-img { width: 100%; height: auto; display: block; object-fit: contain; }
         .hero-overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: flex-end; /* الزر في الأسفل */
-            justify-content: center; /* الزر في الوسط */
-            padding-bottom: 5%; /* مسافة من الأسفل نسبة للصورة */
-            z-index: 10;
+            top: 0; left: 0; width: 100%; height: 100%;
+            display: flex; align-items: flex-end; justify-content: center;
+            padding-bottom: 5%; z-index: 10;
         }
 
         .btn-hero {
             background-color: rgba(255, 255, 255, 0.9);
             color: var(--primary-color);
             border: 2px solid white;
-            font-weight: 800;
-            padding: 10px 35px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            transition: all 0.3s;
-            backdrop-filter: blur(5px);
+            font-weight: 800; padding: 10px 35px; border-radius: 50px;
+            font-size: 1.1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s; backdrop-filter: blur(5px);
         }
-        
-        .btn-hero:hover {
-            background-color: var(--primary-color);
-            color: white;
-            border-color: var(--primary-color);
-            transform: translateY(-3px);
-        }
+        .btn-hero:hover { background-color: var(--primary-color); color: white; transform: translateY(-3px); }
 
-        /* Sections & Cards */
         .section-padding { padding: 60px 0; }
-        .bg-light-custom { background-color: var(--light-bg); }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .section-title h2 {
-            color: var(--text-color);
-            font-weight: 800;
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 3px;
-            background: var(--primary-color);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-/* --- تعديلات قسم المنتجات (توزيع 3-2 وعرض كامل للجوال) --- */
-.product-grid-item {
-    margin-bottom: 30px;
-    transition: transform 0.4s ease;
-}
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title h2 { color: var(--text-color); font-weight: 800; position: relative; display: inline-block; padding-bottom: 10px; }
+        .section-title h2::after { content: ''; position: absolute; width: 50px; height: 3px; background: var(--primary-color); bottom: 0; left: 50%; transform: translateX(-50%); }
 
-.product-card {
-    background: transparent;
-    border: none;
-}
-
-/* حاوية الصورة: تم تقليل النسبة لتصبح أعرض قليلاً */
-.product-img-container {
-    position: relative;
-    width: 100%;
-    padding-top: 110%; /* نسبة جعلت الصورة أعرض من السابق */
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    background: var(--card-bg);
-    transition: all 0.4s ease;
-}
-
-.product-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s ease;
-}
-
-/* تأثير التحويم */
-.product-grid-item:hover .product-img {
-    transform: scale(1.08);
-}
-
-.product-grid-item:hover .product-img-container {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-}
-
-/* تحسين المسافات في الجوال لتظهر صورة واحدة كبيرة */
-@media (max-width: 767px) {
-    .product-grid-item {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-}
-
-        /* Contact Box */
-        .contact-wrapper {
-            background: var(--card-bg);
-            border-radius: 15px;
-            overflow: hidden;
+        .product-grid-item { margin-bottom: 30px; transition: transform 0.4s ease; }
+        .product-card { background: transparent; border: none; }
+        .product-img-container {
+            position: relative; width: 100%; padding-top: 110%;
+            border-radius: 20px; overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: var(--card-bg); transition: all 0.4s ease;
         }
-        .contact-info { padding: 40px; }
-        .contact-social {
-            background-color: #222;
-            color: white;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+        .product-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+        .product-grid-item:hover .product-img { transform: scale(1.08); }
+        .product-grid-item:hover .product-img-container { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
 
-        /* Logos */
-        .partner-logo {
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: 0.3s;
-            max-height: 70px;
-            width: auto;
-            margin: 15px;
-            background: white;
-            padding: 5px;
-            border-radius: 5px;
-        }
+        @media (max-width: 767px) { .product-grid-item { padding-left: 15px; padding-right: 15px; } }
+
+        .contact-wrapper { background: var(--card-bg); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .contact-info { padding: 40px; }
+        .contact-social { background-color: #222; color: white; padding: 40px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+
+        .partner-logo { filter: grayscale(100%); opacity: 0.7; transition: 0.3s; max-height: 70px; width: auto; margin: 15px; background: white; padding: 5px; border-radius: 5px; }
         .partner-logo:hover { filter: grayscale(0); opacity: 1; transform: scale(1.1); }
         .feature-icon { font-size: 2rem; color: var(--primary-color); margin-bottom: 15px; }
-        button.carousel-control-prev, button.carousel-control-next {
-            display: none;
-        }
-        /* Footer */
         footer { background-color: #111; color: white; padding: 40px 0 20px; }
     </style>
 </head>
 <body>
 
+    <h1 class="seo-h1">كلك حلى - شركة توزيع حلويات ومواد غذائية في السعودية</h1>
+
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="شعار كلك حلى.jpg" alt="Logo" width="35" height="35" class="d-inline-block align-text-top me-2 rounded-circle">
+                <img src="شعار كلك حلى.jpg" alt="شعار شركة كلك حلى لتوزيع الحلويات" width="35" height="35" class="d-inline-block align-text-top me-2 rounded-circle">
                 <span data-i18n="brandName">كلك حلى</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="القائمة">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse p-3 p-lg-0 rounded shadow-lg shadow-lg-none mt-2 mt-lg-0" id="navbarNav">
+            <div class="collapse navbar-collapse p-3 p-lg-0" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"><a class="nav-link" href="#hero" data-i18n="navHome">الرئيسية</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about" data-i18n="navAbout">من نحن</a></li>
@@ -301,7 +164,7 @@
                     <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="navContact">تواصل معنا</a></li>
                 </ul>
                 <div class="nav-btn-group d-flex align-items-center justify-content-center mt-3 mt-lg-0">
-                    <button class="btn btn-theme" id="themeToggle"><i class="fas fa-moon"></i></button>
+                    <button class="btn btn-theme" id="themeToggle" aria-label="تبديل الوضع الليلي"><i class="fas fa-moon"></i></button>
                     <button class="btn btn-lang" id="langToggle">English</button>
                 </div>
             </div>
@@ -309,8 +172,7 @@
     </nav>
 
     <section id="hero" class="hero-container">
-        <img id="mainHeroImage" src="ba.jpeg" alt="Banner" class="hero-img">
-        
+        <img id="mainHeroImage" src="ba.jpeg" alt="بنر متجر كلك حلى - تشكيلة حلويات مستوردة فاخرة" class="hero-img">
         <div class="hero-overlay">
             <div data-aos="fade-up">
                 <a href="#about" class="btn btn-hero" data-i18n="btnMore">اكتشف المزيد</a>
@@ -323,8 +185,7 @@
             <div class="row align-items-center mb-5">
                 <div class="col-lg-6" data-aos="fade-left">
                     <div class="section-title text-start">
-                        <h5 class="text-primary" data-i18n="aboutLabel">من نحن</h5>
-                        <h2 data-i18n="aboutTitle">شريكك الأمثل في السوق السعودي</h2>
+                        <h2 data-i18n="aboutTitle" style="font-size: 2rem;">شريكك الأمثل في السوق السعودي</h2>
                     </div>
                     <p class="text-muted" data-i18n="aboutDesc">تأسست شركة كلك حلى لتوزيع المواد الغذائية في عام 2013. رؤيتنا هي البحث عن علامات تجارية عالية الجودة من أوروبا وأمريكا وآسيا وتطويرها في السوق السعودي.</p>
                 </div>
@@ -348,57 +209,69 @@
         </div>
     </section>
 
-<section id="products" class="section-padding">
-    <div class="container">
-        <div class="section-title text-center mb-5" data-aos="fade-up">
-            <h2 data-i18n="productsTitle">منتجاتنا المميزة</h2>
+    <section class="section-padding pt-0 pb-4">
+        <div class="container">
+            <div data-aos="fade-up">
+                <img id="promoBannerImage" src="" alt="عرض خاص - كلك حلى" class="w-100 d-block rounded-4 shadow" loading="lazy">
+            </div>
         </div>
-        
-        <div class="row g-4 justify-content-center">
+    </section>
+    <section class="section-padding pt-0">
+        <div class="container">
+            <div class="position-relative overflow-hidden rounded-4 shadow-lg" data-aos="fade-up">
+                <video class="w-100 d-block" controls autoplay loop muted playsinline style="object-fit: cover; max-height: 600px;">
+                    <source src="v.mp4" type="video/mp4">
+                    متصفحك لا يدعم وسم الفيديو.
+                </video>
+            </div>
+        </div>
+    </section>
+    <section id="products" class="section-padding">
+        <div class="container">
+            <div class="section-title text-center mb-5" data-aos="fade-up">
+                <h2 data-i18n="productsTitle">منتجاتنا المميزة</h2>
+            </div>
             
-            <div class="col-12 col-lg-4 product-grid-item" data-aos="fade-up">
-                <div class="product-card">
-                    <div class="product-img-container">
-                        <img src="1.jpeg" class="product-img" alt="Product">
+            <div class="row g-4 justify-content-center">
+                <div class="col-12 col-lg-4 product-grid-item" data-aos="fade-up">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="1.jpeg" class="product-img" alt="منتج كيك مستورد ميدي - كلك حلى" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 product-grid-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="2.jpeg" class="product-img" alt="بسكويت فرانزي الفاخر - متوفر لدى كلك حلى" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 product-grid-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="3.jpeg" class="product-img" alt="ويفر تاجو المقرمش - منتجات كلك حلى" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 product-grid-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="4.jpeg" class="product-img" alt="تشكيلة كوكيز وبسكويت مستورد - كلك حلى" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 product-grid-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="product-card">
+                        <div class="product-img-container">
+                            <img src="5.jpeg" class="product-img" alt="حلويات هدايا فاخرة - كلك حلى" loading="lazy">
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-12 col-lg-4 product-grid-item" data-aos="fade-up" data-aos-delay="100">
-                <div class="product-card">
-                    <div class="product-img-container">
-                        <img src="2.jpeg" class="product-img" alt="Product">
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-lg-4 product-grid-item" data-aos="fade-up" data-aos-delay="200">
-                <div class="product-card">
-                    <div class="product-img-container">
-                        <img src="3.jpeg" class="product-img" alt="Product">
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-lg-4 product-grid-item" data-aos="fade-up" data-aos-delay="300">
-                <div class="product-card">
-                    <div class="product-img-container">
-                        <img src="4.jpeg" class="product-img" alt="Product">
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-lg-4 product-grid-item" data-aos="fade-up" data-aos-delay="400">
-                <div class="product-card">
-                    <div class="product-img-container">
-                        <img src="5.jpeg" class="product-img" alt="Product">
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
+
     <section id="logistics" class="section-padding">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
@@ -437,7 +310,7 @@
                 <p class="text-muted" data-i18n="mapSubtitle">نتواجد في جميع المدن الرئيسية والمناطق</p>
             </div>
             <div class="text-center" data-aos="zoom-in">
-                <img src="الخريطة.png" class="img-fluid rounded shadow" alt="Distribution Map" style="max-height: 500px;">
+                <img src="الخريطة.png" class="img-fluid rounded shadow" alt="خريطة توزيع كلك حلى في المملكة العربية السعودية" style="max-height: 500px;" loading="lazy">
             </div>
         </div>
     </section>
@@ -448,14 +321,14 @@
                 <h2 data-i18n="partnersTitle">موردونا وشركاؤنا</h2>
             </div>
             <div class="d-flex flex-wrap justify-content-center align-items-center" data-aos="fade-up">
-                <img src="شعار ثورناتوس.jpg" class="partner-logo" alt="Thorntons">
-                <img src="شعار ميدي.png" class="partner-logo" alt="Midi">
-                <img src="شعار تاجو.png" class="partner-logo" alt="Tago">
-                <img src="شعار اسولو.jpg" class="partner-logo" alt="Asolo Dolce">
-                <img src="شعار وين تو.jpg" class="partner-logo" alt="Win2">
-                <img src="شعار فيتا فري.png" class="partner-logo" alt="Franzzi">
-                <img src="شعار سانسي.jpg" class="partner-logo" alt="Sunssi">
-                <img src="شعار تاستي.png" class="partner-logo" alt="Tastee">
+                <img src="شعار ثورناتوس.jpg" class="partner-logo" alt="شعار ثورنتونز" loading="lazy">
+                <img src="شعار ميدي.png" class="partner-logo" alt="شعار ميدي" loading="lazy">
+                <img src="شعار تاجو.png" class="partner-logo" alt="شعار تاجو" loading="lazy">
+                <img src="شعار اسولو.jpg" class="partner-logo" alt="شعار اسولو دولتشي" loading="lazy">
+                <img src="شعار وين تو.jpg" class="partner-logo" alt="شعار وين تو" loading="lazy">
+                <img src="شعار فيتا فري.png" class="partner-logo" alt="شعار فرانزي" loading="lazy">
+                <img src="شعار سانسي.jpg" class="partner-logo" alt="شعار سانسي" loading="lazy">
+                <img src="شعار تاستي.png" class="partner-logo" alt="شعار تاستي" loading="lazy">
             </div>
         </div>
     </section>
@@ -466,7 +339,6 @@
                 <div class="col-md-6 contact-info" data-aos="fade-left">
                     <h2 class="fw-bold mb-4" style="color: var(--primary-color);" data-i18n="contactTitle">تواصل معنا</h2>
                     <p class="mb-5 text-muted" data-i18n="contactDesc">نحن هنا للإجابة على استفساراتكم وبناء شراكات ناجحة.</p>
-                    
                     <div class="mb-4">
                         <div class="d-flex mb-3">
                             <i class="fas fa-map-marker-alt mt-1 ms-3 fa-lg text-primary"></i>
@@ -482,19 +354,12 @@
                                 <p class="text-muted" dir="ltr">+966 54675 5575 | +966 508454379</p>
                             </div>
                         </div>
-                        <div class="d-flex mb-3">
-                            <i class="fas fa-envelope mt-1 ms-3 fa-lg text-primary"></i>
-                            <div>
-                                <h5 class="fw-bold" data-i18n="email">البريد الإلكتروني</h5>
-                                <p class="text-muted">procurement@kellekhala.org</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="col-md-6 contact-social text-center" data-aos="fade-right">
                     <div>
-                           <p style="padding-top: 20px" data-i18n="contactUs">تواصل معنا عبر Linkedin</p>
-                        <a href="#" class="btn btn-outline-light rounded-circle p-3"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <p style="padding-top: 20px" data-i18n="contactUs">تواصل معنا عبر Linkedin</p>
+                        <a href="https://linkedin.com/company/kellek-hala" class="btn btn-outline-light rounded-circle p-3" aria-label="LinkedIn"><i class="fab fa-linkedin fa-lg"></i></a>
                     </div>
                 </div>
             </div>
@@ -505,13 +370,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 mb-4">
-                    <h3 class="fw-bold mb-3 text-white" data-i18n="brandName">كلك حلى</h3>
-                    <p class="text-white-50">&copy; 2025 Kellek Hala Food Distribution Co.</p>
+                    <h3 class="fw-bold mb-3 text-white">كلك حلى</h3>
+                    <p class="text-white-50">&copy; 2026 Kellek Hala Food Distribution Co.</p>
                 </div>
                 <div class="col-md-6 mb-4 text-md-end">
                     <h5 class="text-white mb-3" data-i18n="followUs">تابعنا</h5>
                     <div class="fs-4">
-                        <i class="fab fa-linkedin mx-2"></i>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin mx-2"></i></a>
                     </div>
                 </div>
             </div>
@@ -521,7 +386,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init();
+        AOS.init({ duration: 1000, once: true });
 
         const translations = {
             ar: {
@@ -532,13 +397,11 @@
                 navLogistics: "اللوجستيات",
                 navContact: "تواصل معنا",
                 btnMore: "اكتشف المزيد",
-                aboutLabel: "من نحن",
                 aboutTitle: "شريكك الأمثل في السوق السعودي",
                 aboutDesc: "تأسست شركة كلك حلى لتوزيع المواد الغذائية في عام 2013. رؤيتنا هي البحث عن علامات تجارية عالية الجودة من أوروبا وأمريكا وآسيا وتطويرها في السوق السعودي.",
                 statPos: "نقطة بيع",
                 statFounded: "سنة التأسيس",
                 productsTitle: "منتجاتنا المميزة",
-                productsSubtitle: "تشكيلة واسعة من الكيك، البسكويت، والويفر",
                 featuresTitle: "لماذا كلك حلى؟",
                 feat1Title: "بنية تحتية قوية",
                 feat1Desc: "مستودع مركزي في الرياض و 4 مستودعات إقليمية في الجنوب و 3 مستودعات إقليمية في الغرب والشرق والشمال.",
@@ -553,10 +416,8 @@
                 contactDesc: "نحن هنا للإجابة على استفساراتكم وبناء شراكات ناجحة.",
                 mainOffice: "المكتب الرئيسي",
                 phone: "الهاتف",
-                email: "البريد الإلكتروني",
                 address: "الدائري الثاني الجنوبي، مخرج 18، حي المشاعل، الرياض.",
                 followUs: "تابعنا",
-                followText: "ابق على اطلاع بأحدث منتجاتنا وعروضنا",
                 contactUs:"تواصل معنا عبر Linkedin"
             },
             en: {
@@ -567,31 +428,27 @@
                 navLogistics: "Logistics",
                 navContact: "Contact Us",
                 btnMore: "Discover More",
-                aboutLabel: "About Us",
                 aboutTitle: "Your Right Route to the Saudi Market",
                 aboutDesc: "Established in 2013, Kellek Hala is a well-reputed business. We work closely with exceptional brands from Europe, US, and Asia to develop them in the market.",
                 statPos: "Points of Sale",
                 statFounded: "Founded",
                 productsTitle: "Our Premium Products",
-                productsSubtitle: "A wide range of cakes, biscuits, and wafers",
                 featuresTitle: "Why Kellek Hala?",
                 feat1Title: "Strong Infrastructure",
-                feat1Desc: "Central warehouse in Riyadh and 4 regional warehouses in the South and 3 regional warehouses in the West, East, and North.",
+                feat1Desc: "Central warehouse in Riyadh and regional warehouses across the Kingdom.",
                 feat2Title: "Innovative Marketing",
-                feat2Desc: "We use influencers (Snapchat, Instagram), exhibitions, and sampling to reach consumers.",
+                feat2Desc: "We use influencers and exhibitions to reach consumers effectively.",
                 feat3Title: "Chilled Fleet",
-                feat3Desc: "Modern transportation fleet ensuring products arrive at optimal temperature.",
+                feat3Desc: "Modern transportation fleet ensuring optimal product temperature.",
                 mapTitle: "Kingdom-Wide Coverage",
                 mapSubtitle: "Present in all major cities and regions",
                 partnersTitle: "Our Suppliers & Partners",
                 contactTitle: "Contact Us",
-                contactDesc: "We are here to answer your queries and build successful partnerships.",
+                contactDesc: "We are here to answer your queries and build partnerships.",
                 mainOffice: "Main Office",
                 phone: "Phone",
-                email: "Email",
-                address: "2nd Southern Ring Road, Exit 18, Al Mashael Dist, Riyadh.",
+                address: "2nd Southern Ring Road, Exit 18, Riyadh.",
                 followUs: "Follow Us",
-                followText: "Stay updated with our latest products and offers",
                 contactUs:"Contact us via Linkedin"
             }
         };
@@ -600,39 +457,44 @@
         const themeToggle = document.getElementById('themeToggle');
         const bootstrapCss = document.getElementById('bootstrap-css');
         const heroImgElement = document.getElementById('mainHeroImage');
+        // تعريف متغير الصورة الجديدة
+        const promoBannerImgElement = document.getElementById('promoBannerImage');
 
-        // دالة مبسطة جداً وقوية لتحديث الصورة
         function updateBannerImage() {
-            // نستخدم innerWidth وهو مدعوم في كل المتصفحات
             const isMobile = window.innerWidth <= 768;
             const currentLang = document.documentElement.getAttribute('lang');
+            let imageName = currentLang === 'ar' ? 
+                (isMobile ? 'بنر الموقع جوال-0١.png' : 'بنر الموقع-0١.png') : 
+                (isMobile ? 'بنر الموقع جوال-0٢.png' : 'بنر الموقع-0٢.png');
 
-            // تحديد اسم الصورة بناءً على الشروط
-            let imageName = "";
-            if (currentLang === 'ar') {
-                imageName = isMobile ? 'بنر الموقع جوال-0١.png' : 'بنر الموقع-0١.png';
-            } else {
-                imageName = isMobile ? 'بنر الموقع جوال-0٢.png' : 'بنر الموقع-0٢.png';
-            }
-
-            // تحديث مصدر الصورة فقط إذا اختلف (لتحسين الأداء)
-            if (!heroImgElement.src.includes(imageName)) {
-                heroImgElement.src = imageName;
-            }
+            if (!heroImgElement.src.includes(imageName)) heroImgElement.src = imageName;
             
-            // تصحيح اتجاه الزر في الجوال
             const heroOverlay = document.querySelector('.hero-overlay');
-            if(isMobile) {
-               heroOverlay.style.paddingBottom = "15%"; 
+            heroOverlay.style.paddingBottom = isMobile ? "15%" : "5%";
+        }
+
+        // دالة جديدة لتحديث صورة البنر الترويجي
+        function updatePromoBannerImage() {
+            const isMobile = window.innerWidth <= 768;
+            const currentLang = document.documentElement.getAttribute('lang');
+            let imageName;
+
+            if (currentLang === 'ar') {
+                // عربي
+                imageName = isMobile ? 'BGMA.jpeg' : 'BGA.jpeg';
             } else {
-               heroOverlay.style.paddingBottom = "5%";
+                // إنجليزي
+                imageName = isMobile ? 'BGME.jpeg' : 'BGE.jpeg';
+            }
+
+            if (!promoBannerImgElement.src.includes(imageName)) {
+                promoBannerImgElement.src = imageName;
             }
         }
 
         langToggle.addEventListener('click', () => {
             const html = document.documentElement;
             const currentLang = html.getAttribute('lang');
-            
             if (currentLang === 'ar') {
                 html.setAttribute('lang', 'en');
                 html.setAttribute('dir', 'ltr');
@@ -646,38 +508,33 @@
                 langToggle.textContent = "English";
                 updateContent('ar');
             }
-            updateBannerImage(); // تحديث فوري للصورة
+            updateBannerImage();
+            updatePromoBannerImage(); // تحديث البنر عند تغيير اللغة
         });
 
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
             const icon = themeToggle.querySelector('i');
-            if (document.body.classList.contains('dark-mode')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
         });
 
         function updateContent(lang) {
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
-                if (translations[lang][key]) {
-                    element.textContent = translations[lang][key];
-                }
+                if (translations[lang][key]) element.textContent = translations[lang][key];
             });
         }
 
-        // الاستماع للأحداث (التحميل وتغيير الحجم)
-        window.addEventListener('resize', updateBannerImage);
-        window.addEventListener('load', updateBannerImage); // ضمان التحميل عند البدء
-        
-        // تشغيل أولي
-        updateBannerImage();
-
+        // تحديث البنرات عند تغيير حجم الشاشة أو تحميل الصفحة
+        window.addEventListener('resize', () => {
+            updateBannerImage();
+            updatePromoBannerImage();
+        });
+        window.addEventListener('load', () => {
+            updateBannerImage();
+            updatePromoBannerImage();
+        });
     </script>
 </body>
 </html>
-
